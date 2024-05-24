@@ -13,10 +13,6 @@ app.post('/notes', (req, res) => {
     res.status(201).json(note);
 });
 
-app.get('/notes', (req, res) => {
-    res.json(notes);
-});
-
 app.get('/notes/:id', (req, res) => {
     const note = notes.find(n => n.id === parseInt(req.params.id));
     if (note) {
