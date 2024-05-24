@@ -1,0 +1,25 @@
+version: '3'
+services:
+  proxy:
+    build: ./proxy
+    ports:
+      - "80:80"
+    depends_on:
+      - web
+      - auth-service
+      - notes-service
+
+  auth-service:
+    build: ./auth-service
+    ports:
+      - "3000"
+  
+  notes-service:
+    build: ./notes-service
+    ports:
+      - "3001"
+
+  web:
+    build: ./web
+    ports:
+      - "8080"
