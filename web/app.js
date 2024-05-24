@@ -46,7 +46,7 @@ document.getElementById('note-form').addEventListener('submit', async (e) => {
     const idEstudiante = document.getElementById('note-idEstudiante').value;
     const notaEstudiante = document.getElementById('note-notaEstudiante').value;
 
-    const response = await fetch('/notes', {
+    const response = await fetch('/notes/create', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -66,7 +66,7 @@ document.getElementById('update-note-form').addEventListener('submit', async (e)
     const id = document.getElementById('update-note-id').value;
     const notaEstudiante = document.getElementById('update-note-notaEstudiante').value;
 
-    const response = await fetch(`/notes/${id}`, {
+    const response = await fetch(`/notes/update/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'

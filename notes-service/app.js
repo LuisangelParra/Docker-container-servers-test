@@ -6,15 +6,15 @@ app.use(bodyParser.json());
 
 let notes = [];
 
-app.post('/notes', (req, res) => {
+app.post('/create', (req, res) => {
+    console.log("Funcionando");
     const { idEstudiante, notaEstudiante } = req.body;
     const note = { id: notes.length + 1, idEstudiante, notaEstudiante };
-    console.log("Funcionando");
     notes.push(note);
     res.status(201).json(note);
 });
 
-app.get('/notes', (req, res) => {
+app.get('/all', (req, res) => {
     res.json(notes);
 });
 
@@ -27,7 +27,7 @@ app.get('/notes/:id', (req, res) => {
     }
 });
 
-app.put('/notes/:id', (req, res) => {
+app.put('/update/:id', (req, res) => {
     const { idEstudiante, notaEstudiante } = req.body;
     const note = notes.find(n => n.id === parseInt(req.params.id));
     if (note) {
