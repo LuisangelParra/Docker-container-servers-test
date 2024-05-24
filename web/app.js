@@ -85,7 +85,7 @@ document.getElementById('delete-note-form').addEventListener('submit', async (e)
     }
     const id = document.getElementById('delete-note-id').value;
 
-    const response = await fetch(`/notes/${id}`, {
+    const response = await fetch(`/notes/delete/${id}`, {
         method: 'DELETE'
     });
     if (response.status === 204) {
