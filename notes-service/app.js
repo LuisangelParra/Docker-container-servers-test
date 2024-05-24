@@ -39,7 +39,7 @@ app.put('/update/:id', (req, res) => {
     }
 });
 
-app.delete('/notes/:id', (req, res) => {
+app.delete('/delete/:id', (req, res) => {
     notes = notes.filter(n => n.id !== parseInt(req.params.id));
     res.status(204).end();
 });
