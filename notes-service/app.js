@@ -6,11 +6,15 @@ app.use(bodyParser.json());
 
 let notes = [];
 
-app.post('/notes', (req, res) => {
+app.post('/notes/', (req, res) => {
     const { idEstudiante, notaEstudiante } = req.body;
     const note = { id: notes.length + 1, idEstudiante, notaEstudiante };
     notes.push(note);
     res.status(201).json(note);
+});
+
+app.get('/notes', (req, res) => {
+    res.json(notes);
 });
 
 app.get('/notes/:id', (req, res) => {
