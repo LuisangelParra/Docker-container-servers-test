@@ -11,12 +11,12 @@ services:
 
   auth-service:
     build: ./auth-service
-    ports:
+    expose:
       - "3000"
   
   notes-service:
     build: ./notes-service
-    ports:
+    expose:
       - "3001"
 
   web:
